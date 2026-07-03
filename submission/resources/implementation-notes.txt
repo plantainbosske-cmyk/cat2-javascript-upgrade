@@ -1,0 +1,5 @@
+Loop-rendered products — 6 plantain products rendered from a JS array using forEach()
+Wishlist — Users add and remove items dynamically using createElement() and remove()
+Form validation — Contact form feedback written to the page via textContent and innerHTML
+localStorage — Dark/light theme toggle and wishlist items persist across page reloads
+Banner reveal — Clicking the hero banner toggles a hidden caption using classList.toggle()

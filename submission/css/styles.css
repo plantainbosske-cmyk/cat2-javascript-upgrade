@@ -7,6 +7,38 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
 
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Light theme (default) */
+:root {
+  --bg: #f9f9f9;
+  --text: #1a1a1a;
+  --card-bg: #ffffff;
+  --border: #ddd;
+  --primary: #2e7d32;
+  --primary-light: #4CAF50;
+  --shadow: rgba(0,0,0,0.1);
+  --nav-bg: #2e7d32;
+  --nav-text: #fff;
+}
+
+/* Dark theme */
+[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --text: #f0f0f0;
+  --card-bg: #2a2a2a;
+  --border: #444;
+  --primary: #4CAF50;
+  --primary-light: #66BB6A;
+  --shadow: rgba(0,0,0,0.4);
+  --nav-bg: #1a1a1a;
+  --nav-text: #f0f0f0;
+}
 
 :root {
   --green-deep:   #152e20;
@@ -143,11 +175,24 @@ nav ul li a:hover { color: var(--gold-light); border-color: var(--gold-light); }
   transition: color var(--transition), transform var(--transition);
 }
 .social-links a:hover { color: var(--gold-light); transform: translateY(-3px) scale(1.15); }
-background-size: 100% 2px, 0 2px;
-
 nav ul li a.active {
   background: #3a3a3a;
   color: #ffffff;
+}
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--nav-text);
+  color: var(--nav-text);
+  font-size: 1.5rem;
+  padding: 0.2rem 0.3rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#theme-toggle:hover {
+  background: var(--nav-text);
+  color: var(--nav-bg);
 }
 
 /* ── Hero text ── */
@@ -260,6 +305,85 @@ section > h2::after {
 /* ================================================================
    INDEX — Article cards  (image + text side by side)
    ================================================================ */
+
+h2 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: #1e3525; /* Deep elegant green */
+    margin-bottom: 20px;
+}
+
+/* 1. Scroll Button Layout */
+.scroll-container {
+    text-align: center;
+    margin: 40px 0 60px 0;
+}
+
+.scroll-btn {
+    display: inline-block;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #4a6b53; /* Sage green text */
+    border: 1px solid #4a6b53; /* Sage green border */
+    padding: 12px 35px;
+    border-radius: 50px; /* Gives the pill/capsule shape */
+    transition: all 0.3s ease;
+}
+
+.scroll-btn:hover {
+    background-color: #4a6b53;
+    color: #fbf9f1;
+}
+
+/* 2. Dynamic Products Section layout */
+#dynamic-products {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center; /* Center-aligns the section content */
+}
+
+/* Gold Accent Line */
+.accent-line {
+    width: 50px;
+    height: 4px;
+    background-color: #d1a13b; /* Gold color */
+    margin-bottom: 15px;
+}
+
+/* 3. Wishlist Input Row */
+.wishlist-input-row {
+    display: flex;
+    gap: 0; /* Keeps them flush or near each other */
+    align-items: center;
+    margin-top: 20px;
+}
+
+#wishlist-input {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    border-right: none; /* Blends it toward the button */
+    background: #fff;
+    width: 200px;
+    align-items: center;
+}
+
+#add-to-wishlist {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#add-to-wishlist:hover {
+    background-color: #e0e0e0;
+}
+
 article {
   display: grid;
   grid-template-columns: 280px 1fr;

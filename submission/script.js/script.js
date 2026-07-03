@@ -83,3 +83,45 @@ function initContactForm() {
         }
     });
 }
+function initThemeToggle() {
+    const toggleButton = document.getElementById('theme-toggle');
+    if (!toggleButton) return;
+
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        toggleButton.textContent = '☀️';
+    }else {
+        document.documentElement.removeAttribute('data-theme');
+        toggleButton.textContent = '🌙';
+    } 
+    toggleButton.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        if (isDark) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'light');
+            toggleButton.textContent = '🌙';
+        } else {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleButton.textContent = '☀️';
+        }
+    });  
+}
+function initBannerReveal() {
+    const banner = document.getElementById('banner');
+    if (!banner) return;
+
+    banner.classList.remove('reveal');
+   
+    banner.addEventListener('click', () => {
+        banner.classList.toggle('reveal');
+    });
+}
+document.addEventListener('DOMContentLoaded', () => {
+    renderProducts();
+    initWishlist();
+    initContactForm();
+    initThemeToggle();
+    initBannerReveal();
+});
