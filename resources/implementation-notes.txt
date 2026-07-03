@@ -1,0 +1,7 @@
+The website implements five JavaScript features: an array of six plantain product objects is looped through using `forEach()` 
+to dynamically render product cards into the DOM on the homepage; a wishlist feature allows users to add items using 
+`createElement()` and `appendChild()`, with each item carrying its own remove button that deletes it using `remove()`; 
+the contact form intercepts submission with `event.preventDefault()`
+ and writes validation feedback directly to the page using `textContent` for field errors and `innerHTML` for the summary banner;
+ a dark/light theme toggle and wishlist items are saved to `localStorage` so both states survive page reloads across all three pages;
+  and clicking the hero banner on the homepage calls `classList.toggle()` to reveal or hide a hidden caption overlay beneath the main heading.
