@@ -1,0 +1,530 @@
+/* ================================================================
+   Plantain Boss Kenya — css/style.css
+   Covers: index.html | gallery.html | contact.html
+   Aesthetic: Lush Tropical Editorial
+   Fonts: Playfair Display (headings) + DM Sans (body)
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+
+:root {
+  --green-deep:   #152e20;
+  --green-mid:    #2a5e3f;
+  --green-light:  #4a8c5c;
+  --green-pale:   #ddeee4;
+  --gold:         #c89a0e;
+  --gold-light:   #efc84a;
+  --cream:        #faf6ec;
+  --cream-dark:   #ede5cc;
+  --white:        #ffffff;
+  --text-dark:    #181810;
+  --text-mid:     #3a3a28;
+  --text-muted:   #787860;
+
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  --max-w:        1120px;
+  --radius-card:  14px;
+  --shadow-card:  0 6px 32px rgba(21, 46, 32, .10);
+  --transition:   0.25s ease;
+}
+
+/* ── Reset ───────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--text-dark);
+  line-height: 1.75;
+  overflow-x: hidden;
+}
+/* Subtle grain texture on every page */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.045'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.28;
+}
+
+img   { display: block; max-width: 100%; }
+a     { color: var(--green-mid); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--gold); }
+hr    { border: none; border-top: 1px solid var(--cream-dark); margin: 3rem auto; max-width: var(--max-w); }
+
+
+/* ================================================================
+   HEADER / NAV  (shared)
+   ================================================================ */
+header {
+  position: relative;
+  background: linear-gradient(150deg, var(--green-deep) 0%, var(--green-mid) 60%, #3c7a52 100%);
+  color: var(--cream);
+  overflow: hidden;
+  padding-bottom: 5rem;
+}
+
+/* diagonal shimmer stripe */
+header::before {
+  content: '';
+  position: absolute;
+  top: -40%; right: -10%;
+  width: 45%; height: 200%;
+  background: rgba(255, 255, 255, .03);
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+/* cream wave cutout at bottom */
+header::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 100%; height: 70px;
+  background: var(--cream);
+  clip-path: ellipse(52% 100% at 50% 100%);
+}
+
+/* ── Navbar ── */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 1.2rem 5%;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  width: 58px !important;
+  height: 58px !important;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  object-fit: cover;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.logo:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 0 0 5px rgba(207, 160, 23, .25);
+}
+
+nav ul { list-style: none; display: flex; gap: 3rem; }
+nav ul li a {
+  color: var(--cream);
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  background: linear-gradient(90deg, transparent, transparent), linear-gradient(90deg, var(--gold-light), var(--gold-light));
+  background-size: 100% 2px, 0 2px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px, 0 2px;
+  border-radius: 50px;
+  border-bottom: 2px solid transparent;
+  transition: color var(--transition), border-color var(--transition);
+}
+nav ul li a:hover { color: var(--gold-light); border-color: var(--gold-light); }
+.social-links { display: flex; gap: 1rem; align-items: center; }
+.social-links a {
+  color: var(--cream);
+  font-size: 1.3rem;
+  transition: color var(--transition), transform var(--transition);
+}
+.social-links a:hover { color: var(--gold-light); transform: translateY(-3px) scale(1.15); }
+background-size: 100% 2px, 0 2px;
+
+nav ul li a.active {
+  background: #3a3a3a;
+  color: #ffffff;
+}
+
+/* ── Hero text ── */
+header h2 {
+  font-family: var(--font-body);
+  font-weight: 300;
+  font-size: clamp(0.7rem, 1.8vw, 0.9rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  text-align: center;
+  margin: 2.5rem auto 0.75rem;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.2s ease forwards;
+}
+
+header h1 {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(2rem, 5.5vw, 4.5rem);
+  line-height: 1.1;
+  text-align: center;
+  color: var(--white);
+  max-width: 860px;
+  margin: 0.5rem auto 1.2rem;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.4s ease forwards;
+}
+
+/* strip legacy <b> and <font> tags visually */
+header h1 b, header h1 font { font: inherit; color: inherit; }
+
+header > p,
+header p[style] {
+  text-align: center !important;
+  color: rgba(250, 246, 236, .82);
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  max-width: 680px;
+  margin: 0 auto 1.5rem;
+  padding: 0 5%;
+  position: relative;
+  z-index: 1;
+  opacity: 0;
+  animation: fadeUp 0.7s 0.6s ease forwards;
+}
+
+/* italic subtitle (gallery/contact pages) */
+header p i { font-style: italic; color: var(--gold-light); }
+
+
+/* ================================================================
+   MAIN WRAPPER
+   ================================================================ */
+main {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 2rem 5% 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ================================================================
+   INDEX — scroll link
+   ================================================================ */
+#about {
+  padding: 2.5rem 0 0.5rem;
+  text-align: center;
+}
+#about a {
+  display: inline-block;
+  font-size: 0.8rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--green-mid);
+  border: 1.5px solid var(--green-light);
+  padding: 0.55rem 1.4rem;
+  border-radius: 40px;
+  transition: background var(--transition), color var(--transition);
+}
+#about a:hover { background: var(--green-mid); color: var(--cream); }
+
+
+/* ── Section headings ── */
+section > h2 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.6rem, 3.5vw, 2.5rem);
+  color: var(--green-deep);
+  margin-bottom: 2rem;
+  padding-bottom: 0.6rem;
+}
+section > h2::after {
+  content: '';
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+  margin-top: 0.5rem;
+}
+
+
+/* ================================================================
+   INDEX — Article cards  (image + text side by side)
+   ================================================================ */
+article {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 0 2rem;
+  align-items: start;
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 2rem;
+  margin-bottom: 1.6rem;
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--green-light);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+article::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(74,140,92,.05) 0%, transparent 55%);
+  pointer-events: none;
+}
+article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 48px rgba(21, 46, 32, .15);
+}
+
+article h4 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--green-deep);
+  grid-column: 1 / -1;
+  margin-bottom: 0.75rem;
+}
+
+article img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover;
+  border-radius: 9px;
+  grid-row: 2;
+  filter: saturate(1.1);
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+article:hover img { transform: scale(1.04); filter: saturate(1.3) brightness(1.03); }
+
+article p {
+  font-size: 0.975rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+  grid-row: 2;
+  align-self: center;
+}
+
+
+/* ================================================================
+   GALLERY PAGE  (#gallery grid)
+   ================================================================ */
+#gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.8rem;
+  padding: 1rem 0 2rem;
+}
+
+/* Override the default article card for gallery tiles */
+#gallery article {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: unset;
+  border-left: none;
+  border-top: 4px solid var(--green-light);
+  padding: 0;
+  overflow: hidden;
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+#gallery article:hover { border-top-color: var(--gold); }
+
+#gallery article h4 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--green-deep);
+  padding: 1rem 1.2rem 0.3rem;
+  grid-column: unset;
+  margin-bottom: 0;
+}
+
+#gallery article img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover;
+  border-radius: 0;
+  grid-row: unset;
+  order: -1;
+}
+
+#gallery article p {
+  padding: 0.2rem 1.2rem 1.2rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  grid-row: unset;
+  align-self: auto;
+}
+
+
+/* ================================================================
+   CONTACT PAGE  (#contact form)
+   ================================================================ */
+#contact {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 1rem 0 3rem;
+}
+
+#contact form {
+  background: var(--white);
+  border-radius: var(--radius-card);
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow: var(--shadow-card);
+  border-top: 4px solid var(--green-light);
+  display: flex;
+  flex-direction: column;
+}
+
+#contact label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-mid);
+  margin-bottom: 0.4rem;
+  margin-top: 1.3rem;
+}
+#contact label:first-of-type { margin-top: 0; }
+
+#contact input[type="text"],
+#contact input[type="email"],
+#contact textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: var(--cream);
+  border: 1.5px solid var(--cream-dark);
+  border-radius: 8px;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  resize: vertical;
+}
+#contact input:focus,
+#contact textarea:focus {
+  border-color: var(--green-light);
+  box-shadow: 0 0 0 3px rgba(74, 140, 92, .15);
+}
+
+#contact textarea { min-height: 140px; }
+
+/* Hide the raw <br> spacers the HTML uses */
+#contact br { display: none; }
+
+#contact button[type="submit"],
+#contact input[type="reset"] {
+  display: inline-block;
+  margin-top: 1.8rem;
+  padding: 0.75rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition), transform var(--transition);
+}
+
+#contact button[type="submit"] {
+  background: var(--green-mid);
+  color: var(--white);
+  margin-right: 0.75rem;
+}
+#contact button[type="submit"]:hover { background: var(--green-deep); transform: translateY(-2px); }
+
+#contact input[type="reset"] {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1.5px solid var(--cream-dark);
+}
+#contact input[type="reset"]:hover { border-color: var(--green-light); color: var(--green-mid); }
+
+
+/* ================================================================
+   FOOTER  (shared)
+   ================================================================ */
+footer {
+  background: var(--green-deep);
+  color: var(--cream);
+  padding: 3rem 5% 2rem;
+  text-align: center;
+  position: relative;
+}
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--green-light), var(--gold));
+}
+footer hr { display: none; }
+
+footer p {
+  line-height: 2.1;
+  font-size: 0.9rem;
+  color: rgba(250, 246, 236, .7);
+}
+
+/* "Contact" and "Location" label paragraphs */
+footer p:nth-child(2),
+footer p:nth-child(4) {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--gold-light);
+  margin-top: 0.75rem;
+}
+
+/* copyright */
+footer p:last-child {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(250, 246, 236, .12);
+  font-size: 0.78rem;
+  color: rgba(250, 246, 236, .38);
+}
+
+
+/* ================================================================
+   ANIMATIONS
+   ================================================================ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ================================================================
+   RESPONSIVE
+   ================================================================ */
+@media (max-width: 768px) {
+  nav { flex-direction: column; align-items: flex-start; }
+  nav ul { gap: 1rem; flex-wrap: wrap; }
+
+  article { grid-template-columns: 1fr; }
+  article img { height: 200px !important; }
+
+  #gallery { grid-template-columns: 1fr; }
+
+  #contact form { padding: 1.8rem 1.2rem; }
+}
+
+@media (max-width: 480px) {
+  header h1 { font-size: 1.8rem; }
+  article { padding: 1.2rem; }
+}
