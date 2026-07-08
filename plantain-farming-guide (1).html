@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Plantain Farming Kenya">
+    <meta name="description"
+        content="A practical, step-by-step guide to growing plantain in Kenya — from choosing land to harvesting your first bunch, plus the economics of plantain farming.">
+    <meta name="keywords"
+        content="Plantains, Plantain Farming Kenya, Plantain Guide, Plantain Boss Kenya, Matoke, Machakos Plantain Farming">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Growing Plantain in Kenya — Plantain Boss Kenya</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://yt3.googleusercontent.com/0kjm5_Uv8OPL5vDdWe1Udig-ZMxPrx4adVG8u2uZ4C9zIXWBhBGu1Mb51-IhS5qLj7WUbYhmeg=s160-c-k-c0x00ffffff-no-rj">
+
+    <style>
+      /* ---- Guide-specific components, built on the site's own palette ---- */
+      #guide-content{
+        --gd-green-deep:#152e20;
+        --gd-green-mid:#2a5e3f;
+        --gd-green-light:#4a8c5c;
+        --gd-cream:#faf6ec;
+        --gd-cream-dark:#ede5cc;
+        --gd-gold:#c89a0e;
+        --gd-gold-light:#efc84a;
+        --gd-text-dark:#181810;
+        --gd-text-mid:#3a3a28;
+        --gd-text-muted:#787860;
+      }
+
+      .guide-quickfacts{
+        display:grid;
+        grid-template-columns:repeat(3,1fr);
+        gap:1px;
+        background:var(--gd-green-deep);
+        border-radius:14px;
+        overflow:hidden;
+        box-shadow:0 12px 30px rgba(21,46,32,.15);
+        margin:0 0 2.5rem;
+      }
+      .guide-quickfacts div{ background:var(--gd-cream); padding:1.2rem 1.1rem; }
+      .guide-quickfacts .num{
+        font-family:'Playfair Display', serif;
+        font-weight:700;
+        font-size:1.5rem;
+        color:var(--gd-green-mid);
+        display:block;
+      }
+      .guide-quickfacts .label{
+        font-size:0.76rem;
+        color:var(--gd-text-muted);
+        text-transform:uppercase;
+        letter-spacing:0.06em;
+      }
+
+      .guide-grid{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:0.9rem;
+        margin:0 0 2.5rem;
+      }
+      .guide-card{
+        background:var(--gd-cream-dark);
+        padding:1.1rem 1.2rem;
+        border-radius:10px;
+        border-left:3px solid var(--gd-green-light);
+      }
+      .guide-card h4{
+        font-family:'Playfair Display', serif;
+        font-style:italic;
+        margin:0 0 0.4rem;
+        font-size:1.05rem;
+        color:var(--gd-green-mid);
+      }
+      .guide-card p{ margin:0; font-size:0.92rem; color:var(--gd-text-muted); line-height:1.65; }
+
+      .guide-stage{
+        display:grid;
+        grid-template-columns:44px 1fr;
+        gap:0 1.2rem;
+        margin-bottom:0;
+      }
+      .guide-stage-marker{ display:flex; flex-direction:column; align-items:center; }
+      .guide-stage-dot{
+        width:34px; height:34px; border-radius:50%;
+        background:var(--gd-green-mid); color:var(--gd-cream);
+        display:flex; align-items:center; justify-content:center;
+        font-family:'Playfair Display', serif; font-weight:700; font-size:0.9rem;
+        flex-shrink:0;
+      }
+      .guide-stage-line{ width:2px; flex:1; background:var(--gd-green-light); margin-top:4px; min-height:36px; }
+      .guide-stage:last-of-type .guide-stage-line{ display:none; }
+      .guide-stage-body{ padding-bottom:2.4rem; }
+      .guide-stage-body h3{
+        font-family:'Playfair Display', serif;
+        font-weight:700;
+        font-size:1.35rem;
+        margin:0.1rem 0 0.6rem;
+        color:var(--gd-green-deep);
+      }
+      .guide-stage-body p{ margin:0 0 0.7rem; color:var(--gd-text-mid); line-height:1.75; }
+      .guide-stage-body ul{ margin:0 0 0.7rem; padding-left:1.2rem; color:var(--gd-text-mid); line-height:1.75; }
+      .guide-stage-body li{ margin-bottom:0.4rem; }
+
+      .guide-tip{
+        background:var(--gd-cream-dark);
+        border-left:3px solid var(--gd-gold);
+        padding:0.75rem 1rem;
+        font-size:0.92rem;
+        border-radius:6px;
+        margin-top:0.6rem;
+        color:var(--gd-text-mid);
+      }
+      .guide-tip strong{ color:var(--gd-gold); }
+
+      .guide-table{
+        width:100%;
+        border-collapse:collapse;
+        margin:0 0 1rem;
+        font-size:0.9rem;
+        border:1px solid var(--gd-green-deep);
+      }
+      .guide-table th{
+        text-align:left;
+        background:var(--gd-green-deep);
+        color:var(--gd-cream);
+        padding:0.6rem 0.75rem;
+        font-weight:500;
+        border:1px solid var(--gd-green-deep);
+      }
+      .guide-table td{
+        padding:0.7rem 0.75rem;
+        border:1px solid var(--gd-cream-dark);
+        vertical-align:top;
+        color:var(--gd-text-mid);
+      }
+      .guide-table tr:nth-child(even) td{ background:var(--gd-cream-dark); }
+
+      @media (max-width:700px){
+        .guide-quickfacts{ grid-template-columns:1fr; }
+        .guide-grid{ grid-template-columns:1fr; }
+      }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="../index.html"><img src="https://yt3.googleusercontent.com/0kjm5_Uv8OPL5vDdWe1Udig-ZMxPrx4adVG8u2uZ4C9zIXWBhBGu1Mb51-IhS5qLj7WUbYhmeg=s160-c-k-c0x00ffffff-no-rj" alt="Plantain Boss Kenya" class="logo" width="5%" height="10%"></a>
+
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="plantain-farming-guide.html" class="active">Farming Guide</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+
+            <div class="social-links">
+                <a href="https://www.youtube.com/@PlantainBossKE" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.instagram.com/plantainboss_ke/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@plantainboss_ke" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/plantainbosskenya" target="_blank"><i class="fab fa-facebook"></i></a>
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <h2 style="text-align:center;">Field Guide</h2>
+        <h1 style="text-align:center;">Growing Plantain in Kenya</h1>
+        <p style="text-align:center;">A practical, step-by-step guide to raising a healthy plantain plot — from choosing land to harvesting your first bunch — straight from how we do it at Plantain Boss Kenya.</p>
+    </header>
+
+    <main>
+        <div id="guide-content">
+
+        <section id="guide-overview">
+            <h2>Plantain vs Banana — What's the Difference?</h2>
+            <hr>
+            <div class="guide-grid">
+                <div class="guide-card"><h4>Plantain</h4><p>Larger, more angular fruit with thicker skin. High in starch, low in sugar, and doesn't sweeten much even when ripe — grown to be cooked: fried, roasted, boiled or mashed, never eaten raw.</p></div>
+                <div class="guide-card"><h4>Cooking Banana (Matoke)</h4><p>Prepared the same way as plantain — boiled, steamed or mashed while green — but with smaller bunches and fingers. Ng'ombe and Uganda Green are the common matoke varieties in Kenya.</p></div>
+                <div class="guide-card"><h4>Sweet / Dessert Banana</h4><p>Smaller, thinner-skinned fruit that ripens sweet and is eaten raw — Cavendish, Apple Banana, Gold Finger. Grown mainly for fresh eating and export.</p></div>
+                <div class="guide-card"><h4>Growing Needs</h4><p>All three share the same broad requirements — warm temperatures, 1,000–2,000mm rainfall, well-drained loam — so the choice usually comes down to market and taste, not growing conditions.</p></div>
+            </div>
+        </section>
+
+        <section id="guide-economics">
+            <h2>Why Farm Plantain? The Economics</h2>
+            <hr>
+            <div class="guide-quickfacts">
+                <div><span class="num">800–1,200</span><span class="label">Plants per acre</span></div>
+                <div><span class="num">8–24t</span><span class="label">Yield per acre, yearly</span></div>
+                <div><span class="num">Ksh 50–100</span><span class="label">Price per kg, local market</span></div>
+            </div>
+            <article>
+                <h4>What Makes the Numbers Work</h4>
+                <img src="images/farm7.jpg" alt="Plantain Boss Kenya harvest" width="30%" height="40%">
+                <p>A well-managed acre can gross roughly Ksh 400,000–2,400,000 a year at current farm-gate prices, with demand holding firm year-round in urban markets, restaurants and processors. Running costs stay low once a mat is established — suckers are cheap, and the mat keeps throwing up new ones to fruit again, so one planting can yield for years without replanting. First harvest lands in 9–12 months, quick compared to most perennial cash crops, and beyond fresh sale there's room to process into crisps and flour for a second income stream. Because plantain tolerates variable soils and a fair amount of neglect, it's a sensible addition alongside maize, coffee or dairy rather than a replacement for them.</p>
+            </article>
+        </section>
+
+        <section id="guide-regions">
+            <h2>Best Growing Regions</h2>
+            <hr>
+            <div class="guide-grid">
+                <div class="guide-card"><h4>1. Eastern (Ukambani)</h4><p>Machakos, Makueni — warm and semi-arid; the wetter pockets around the hills grow plantain well, but drier stretches need irrigation and heavy mulching to see it through dry spells.</p></div>
+                <div class="guide-card"><h4>Coast</h4><p>Mombasa, Kilifi — warm and humid, the traditional heartland of plantain growing.</p></div>
+                <div class="guide-card"><h4>Western</h4><p>Kakamega, Busia, Bungoma — reliable rainfall and fertile loam.</p></div>
+                <div class="guide-card"><h4>Nyanza</h4><p>Kisumu, Siaya, Kisii — warm lowlands well suited to year-round growth.</p></div>
+                <div class="guide-card"><h4>Central &amp; Highlands</h4><p>Kiambu, Murang'a, Kericho, Meru — grows well below 1,800m, but use windbreaks against cold.</p></div>
+            </div>
+        </section>
+
+        <section id="guide-journey">
+            <h2>The Growing Journey</h2>
+            <hr>
+
+            <div class="guide-stage">
+                <div class="guide-stage-marker"><div class="guide-stage-dot">1</div><div class="guide-stage-line"></div></div>
+                <div class="guide-stage-body">
+                    <h3>Choose Land &amp; Prepare the Soil</h3>
+                    <p>Pick a sunny, well-drained site — waterlogging is the fastest way to lose a young plant to root rot. Plantain does best in deep, fertile loam with a pH of 5.5–7.0.</p>
+                    <ul>
+                        <li>Clear weeds, rocks and debris, then till to a depth of 30–40cm.</li>
+                        <li>On poorly drained ground, build raised beds or ridges.</li>
+                        <li>Work in well-rotted manure or compost across the plot before digging holes.</li>
+                    </ul>
+                    <div class="guide-tip"><strong>Tip:</strong> in cooler highland areas like Nyeri or Kericho, plant windbreaks first — young plantain suffers in cold wind.</div>
+                </div>
+            </div>
+
+            <div class="guide-stage">
+                <div class="guide-stage-marker"><div class="guide-stage-dot">2</div><div class="guide-stage-line"></div></div>
+                <div class="guide-stage-body">
+                    <h3>Get Planting Material</h3>
+                    <p>Plantain is propagated from suckers — the shoots that grow from an established mother plant's base — or from disease-free tissue-culture seedlings.</p>
+                    <ul>
+                        <li>Tissue-culture seedlings cost more upfront but guarantee true-to-type, disease-free stock.</li>
+                        <li>If using suckers, choose healthy, sword-shaped shoots from a productive mother plant.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-stage">
+                <div class="guide-stage-marker"><div class="guide-stage-dot">3</div><div class="guide-stage-line"></div></div>
+                <div class="guide-stage-body">
+                    <h3>Dig Holes &amp; Plant</h3>
+                    <p>Dig holes at least 60cm wide, spacing plants 4ft by 4ft in a square pattern (5m rows if you'll use machinery later). Dig each hole 2.5 to 4ft deep — deeper on light, sandy soils so the corm sits well anchored; shallower on heavier clay where drainage is slower.</p>
+                    <ul>
+                        <li>Mix the topsoil with a bucket of manure or compost and return it to the hole.</li>
+                        <li>Set the sucker's corm in the centre, orient the cut side against the hole wall, and cover firmly.</li>
+                        <li>Water thoroughly right after planting.</li>
+                        <li>Plant at the onset of the rains (March–April or October–November) so roots establish before any dry spell.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-stage">
+                <div class="guide-stage-marker"><div class="guide-stage-dot">4</div><div class="guide-stage-line"></div></div>
+                <div class="guide-stage-body">
+                    <h3>Mulch, Weed &amp; Feed the Mat</h3>
+                    <p>Plantain needs consistently moist — never soggy — soil, especially in its first three to four months. Most of this work happens right around the mat, the cluster of mother plant and suckers growing from one corm.</p>
+                    <ul>
+                        <li><strong>Mulch the mat, not just the row.</strong> Pile 10–15cm of dry grass, banana leaves, or crop residue in a ring around each mat, starting a hand's width out from the pseudostems. This locks moisture into the root zone where the mat's shallow, spreading roots actually feed, breaks the force of rain so it doesn't cap and erode the loosened soil around the corm, and slowly rots down into organic matter that feeds the mat as it composts. Top it up every few months, and keep it off the stem itself to avoid collar rot.</li>
+                        <li><strong>Weed the mat by hand, not with a hoe.</strong> Plantain corms and feeder roots sit close to the surface, so a hoe or slasher near the base easily wounds them, opening the door to weevils and rot. Pull weeds by hand within the mulched ring, and only slash or hoe further out between mats. Left unweeded, grass and weeds around the mat outcompete it for the same shallow-rooted nutrients and water the mulch is trying to conserve.</li>
+                        <li><strong>Feed on a simple schedule:</strong> manure and DAP at planting, urea or CAN after three months, then compost plus NPK (17:17:17) every three months, switching to a potassium-rich feed once flowering starts. Apply fertiliser in a ring at the mulch line, not against the stem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-stage">
+                <div class="guide-stage-marker"><div class="guide-stage-dot">5</div><div class="guide-stage-line"></div></div>
+                <div class="guide-stage-body">
+                    <h3>Manage Suckers &amp; Support the Plant</h3>
+                    <p>Each mat throws up many suckers as it grows — left unchecked they compete with each other for nutrients.</p>
+                    <ul>
+                        <li>Keep 3–4 healthy suckers per mat (the mother plant plus daughter, granddaughter and follower), removing the rest.</li>
+                        <li>Once bunches start forming, prop the plant with a strong wooden pole — a full bunch is heavy enough to snap the stem.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="guide-stage">
+                <div class="guide-stage-marker"><div class="guide-stage-dot">6</div></div>
+                <div class="guide-stage-body">
+                    <h3>Harvest</h3>
+                    <p>Most varieties are ready 9–12 months after planting. Harvest when fingers fill out and round off but are still green and firm — they ripen off the plant during transport and storage.</p>
+                    <ul>
+                        <li>Cut the whole bunch with a sharp panga, supporting its weight as it comes free.</li>
+                        <li>After harvest, cut the spent pseudostem down — this pushes energy into the young suckers you kept, which will fruit next.</li>
+                    </ul>
+                    <div class="guide-tip"><strong>Tip:</strong> because a mat keeps sending up new suckers, one planting can keep producing harvests for several years with steady management.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guide-pests">
+            <h2>Common Pests &amp; Diseases</h2>
+            <hr>
+            <table class="guide-table">
+                <tr><th>Problem</th><th>Signs</th><th>Management</th></tr>
+                <tr><td>Banana weevil</td><td>Bores into the pseudostem, weakening the plant</td><td>Use clean planting material; apply recommended insecticide</td></tr>
+                <tr><td>Nematodes</td><td>Stunted growth, poor root development</td><td>Rotate crops; plant tissue-culture seedlings</td></tr>
+                <tr><td>Panama disease</td><td>Fungal wilt, yellowing leaves</td><td>Avoid infected soils; practise field hygiene</td></tr>
+                <tr><td>Sigatoka leaf spot</td><td>Black streaks across the leaves</td><td>Fungicide and regular leaf sanitation</td></tr>
+                <tr><td>Bacterial wilt</td><td>Rotting roots</td><td>Well-drained soil; avoid over-watering; bactericides if needed</td></tr>
+            </table>
+        </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p>Contact</p>
+        <p>Email: Plantainbosske@gmail.com</p>
+        <p>Location</p>
+        <p>Machakos, Kenya</p>
+        <p> © 2026 Plantain Boss Kenya | All rights reserved</p>
+    </footer>
+    <script src="script.js/script.js"></script>
+</body>
+</html>
