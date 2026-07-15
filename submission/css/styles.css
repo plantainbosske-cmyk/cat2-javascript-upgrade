@@ -341,6 +341,10 @@ main {
 }
 #about a:hover { background: var(--green-mid); color: var(--cream); }
 
+[id="Stories we Tell"] {
+  text-align: center;
+}
+
 
 
 
