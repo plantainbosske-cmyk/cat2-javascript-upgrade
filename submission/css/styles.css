@@ -6,7 +6,7 @@
    ================================================================ */
 
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,700&display=swap');
 
 
 /* Reset */
@@ -60,7 +60,7 @@
   --text-muted:   #787860;
 
 
-  --font-display: 'Playfair Display', Georgia, serif;
+  --font-display: 'DM Sans', Arial, sans-serif;
   --font-body:    'DM Sans', sans-serif;
 
 
@@ -489,7 +489,7 @@ article:hover {
 
 article h4 {
   font-family: var(--font-display);
-  font-style: italic;
+  font-weight: 700;
   font-size: 1.2rem;
   color: var(--green-deep);
   grid-column: 1 / -1;
@@ -559,7 +559,7 @@ article p {
 
 #gallery article h4 {
   font-family: var(--font-display);
-  font-style: italic;
+  font-weight: 700;
   font-size: 1.05rem;
   color: var(--green-deep);
   padding: 1rem 1.2rem 0.3rem;
@@ -718,7 +718,7 @@ footer p {
 footer p:nth-child(2),
 footer p:nth-child(4) {
   font-family: var(--font-display);
-  font-style: italic;
+  font-weight: 500;
   font-size: 0.95rem;
   color: var(--gold-light);
   margin-top: 0.75rem;
