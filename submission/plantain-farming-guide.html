@@ -327,5 +327,15 @@
         <p> © 2026 Plantain Boss Kenya | All rights reserved</p>
     </footer>
     <script src="script.js/script.js"></script>
+
+    <div id="floating-video" style="position:fixed; bottom:20px; right:20px; width:300px; max-width:calc(100vw - 32px); background:#152e20; border-radius:12px; box-shadow:0 12px 32px rgba(0,0,0,0.35); overflow:hidden; z-index:999;">
+        <div style="display:flex; align-items:center; justify-content:space-between; padding:0.5rem 0.75rem; background:#152e20;">
+            <span style="color:#faf6ec; font-family:'DM Sans', sans-serif; font-size:0.8rem; font-weight:500;">How to Plant Plantains in Kenya</span>
+            <button onclick="document.getElementById('floating-video').style.display='none';" aria-label="Close video" style="background:none; border:none; color:#faf6ec; font-size:1.1rem; cursor:pointer; line-height:1; padding:0 0.2rem;">&times;</button>
+        </div>
+        <div style="position:relative; width:100%; padding-top:56.25%;">
+            <iframe src="https://www.youtube.com/embed/mXmRa_F-jCs" title="How to Plant Plantains in Kenya" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
 </body>
 </html>
